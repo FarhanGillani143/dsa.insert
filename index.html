@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Insert Array</title>
+  </head>
+  <body>
+    <h1>Insert Array with text Input and Button</h1>
+    <input type="text" placeholder="Add Position" id="insertPosition" />
+    <input type="text" placeholder="Add Element" id="insertElement" />
+    <button onclick="handleInsert()">Insert Data</button>
+  </body>
+  <script>
+    const handleInsert = () => {
+      const insert = [90, 89, 67, 45, 34, 23, 12];
+      const position = document.getElementById("insertPosition").value;
+      const insertElement = document.getElementById("insertElement").value;
+
+      for (let i = insert.length - 1; i >= 0; i--) {
+        if (i >= position) {
+          insert[i + 1] = insert[i];
+          if (i == position) {
+            insert[i] = insertElement;
+          }
+        }
+      } 
+      console.log(insert)     
+    };
+  </script>
+</html>
